@@ -1,0 +1,106 @@
+# ChemVL graph KGPT final hyperparameters.
+# Single source for formal runs via scripts/graph_optimization/run_graph.sh.
+# Optional per-dataset graph_training_recipe: legacy | optimized_v1 (default legacy if omitted).
+
+multiseed_runseeds:
+  default: [0, 1, 2]
+
+defaults:
+  note: Training defaults when dataset block omits keys.
+  batch_size: 64
+  optimizer: Adam
+  lr: 0.001
+  weight_decay: 0.0001
+  epochs: 100
+  use_patience: true
+  encoder_lr: null
+  graph_training_recipe: optimized_v1
+  graph_encoder:
+    drop_ratio: 0.1
+
+datasets:
+  qm7:
+    graph_training_recipe: optimized_v1
+    batch_size: 64
+    optimizer: Adam
+    lr: 0.001
+    weight_decay: 0.0001
+    epochs: 100
+    encoder_lr: 1.0e-05
+    graph_encoder:
+      drop_ratio: 0.2
+    regression_scheduler:
+      num_classes: 100
+      bin_mode: quantile
+  bbbp:
+    graph_training_recipe: optimized_v1
+    batch_size: 64
+    optimizer: AdamW
+    lr: 0.0004
+    weight_decay: 0.001
+    epochs: 100
+    graph_encoder:
+      drop_ratio: 0.2
+  bace:
+    graph_training_recipe: optimized_v1
+    batch_size: 16
+    optimizer: Adam
+    lr: 0.0001
+    weight_decay: 0.0001
+    epochs: 100
+    encoder_lr: 0.0005
+    graph_encoder:
+      drop_ratio: 0.3
+  clintox:
+    graph_training_recipe: optimized_v1
+    batch_size: 8
+    optimizer: Adam
+    lr: 0.0005
+    weight_decay: 0.001
+    epochs: 100
+    encoder_lr: 0.0005
+    graph_encoder:
+      drop_ratio: 0.3
+  tox21:
+    graph_training_recipe: legacy
+    batch_size: 8
+    optimizer: Adam
+    lr: 0.0001
+    weight_decay: 0.0001
+    epochs: 100
+    graph_encoder:
+      drop_ratio: 0.1
+  sider:
+    graph_training_recipe: optimized_v1
+    encoder_lr: 1.0e-05
+    graph_encoder:
+      drop_ratio: 0.1
+  hiv:
+    graph_training_recipe: optimized_v1
+    encoder_lr: 0.0005
+    graph_encoder:
+      drop_ratio: 0.0
+  esol:
+    graph_training_recipe: optimized_v1
+    encoder_lr: 0.0001
+    graph_encoder:
+      drop_ratio: 0.3
+    regression_scheduler:
+      num_classes: 100
+      bin_mode: quantile
+  freesolv:
+    graph_training_recipe: optimized_v1
+    encoder_lr: 0.0001
+    graph_encoder:
+      drop_ratio: 0.3
+    regression_scheduler:
+      num_classes: 100
+      bin_mode: quantile
+  lipo:
+    graph_training_recipe: optimized_v1
+    encoder_lr: 0.0001
+    graph_encoder:
+      drop_ratio: 0.1
+    regression_scheduler:
+      num_classes: 100
+      bin_mode: quantile

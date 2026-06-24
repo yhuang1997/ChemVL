@@ -1,0 +1,86 @@
+{
+    "image_chemvl_ft_baseline": {
+        "config_chain": [
+            "configs/ablation_study/misplacement_mask/misplacement_mask_ft_base.json",
+            "configs/ablation_study/misplacement_mask/overlays/ft/image_baseline.json"
+        ]
+    },
+    "image_chemvl_ft_misplacement": {
+        "config_chain": [
+            "configs/ablation_study/misplacement_mask/misplacement_mask_ft_base.json",
+            "configs/ablation_study/misplacement_mask/overlays/ft/image_misplacement.json"
+        ]
+    },
+    "image_chemvl_ft_mask_attack_025": {
+        "config_chain": [
+            "configs/ablation_study/misplacement_mask/misplacement_mask_ft_base.json",
+            "configs/ablation_study/misplacement_mask/overlays/ft/image_mask_attack_025.json"
+        ]
+    },
+    "image_chemvl_ft_mask_attack_050": {
+        "config_chain": [
+            "configs/ablation_study/misplacement_mask/misplacement_mask_ft_base.json",
+            "configs/ablation_study/misplacement_mask/overlays/ft/image_mask_attack_050.json"
+        ]
+    },
+    "graph_gin_chemvl_ft_baseline": {
+        "config_chain": [
+            "configs/ablation_study/misplacement_mask/misplacement_mask_ft_base.json",
+            "configs/ablation_study/misplacement_mask/overlays/ft/graph_baseline.json"
+        ]
+    },
+    "graph_gin_chemvl_ft_misplacement": {
+        "config_chain": [
+            "configs/ablation_study/misplacement_mask/misplacement_mask_ft_base.json",
+            "configs/ablation_study/misplacement_mask/overlays/ft/graph_misplacement.json"
+        ]
+    },
+    "graph_gin_chemvl_ft_mask_attack_025": {
+        "config_chain": [
+            "configs/ablation_study/misplacement_mask/misplacement_mask_ft_base.json",
+            "configs/ablation_study/misplacement_mask/overlays/ft/graph_mask_attack_025.json"
+        ]
+    },
+    "graph_gin_chemvl_ft_mask_attack_050": {
+        "config_chain": [
+            "configs/ablation_study/misplacement_mask/misplacement_mask_ft_base.json",
+            "configs/ablation_study/misplacement_mask/overlays/ft/graph_mask_attack_050.json"
+        ]
+    },
+    "image_chemvl_kgpt_misplacement": {
+        "config_chain": [
+            "configs/ablation_study/misplacement_mask/misplacement_mask_kgpt_base.json",
+            "configs/ablation_study/misplacement_mask/overlays/kgpt/image_misplacement.json"
+        ]
+    },
+    "image_chemvl_kgpt_mask_attack_025": {
+        "config_chain": [
+            "configs/ablation_study/misplacement_mask/misplacement_mask_kgpt_base.json",
+            "configs/ablation_study/misplacement_mask/overlays/kgpt/image_mask_attack_025.json"
+        ]
+    },
+    "image_chemvl_kgpt_mask_attack_050": {
+        "config_chain": [
+            "configs/ablation_study/misplacement_mask/misplacement_mask_kgpt_base.json",
+            "configs/ablation_study/misplacement_mask/overlays/kgpt/image_mask_attack_050.json"
+        ]
+    },
+    "graph_gin_chemvl_kgpt_misplacement": {
+        "config_chain": [
+            "configs/ablation_study/misplacement_mask/misplacement_mask_kgpt_base.json",
+            "configs/ablation_study/misplacement_mask/overlays/kgpt/graph_misplacement.json"
+        ]
+    },
+    "graph_gin_chemvl_kgpt_mask_attack_025": {
+        "config_chain": [
+            "configs/ablation_study/misplacement_mask/misplacement_mask_kgpt_base.json",
+            "configs/ablation_study/misplacement_mask/overlays/kgpt/graph_mask_attack_025.json"
+        ]
+    },
+    "graph_gin_chemvl_kgpt_mask_attack_050": {
+        "config_chain": [
+            "configs/ablation_study/misplacement_mask/misplacement_mask_kgpt_base.json",
+            "configs/ablation_study/misplacement_mask/overlays/kgpt/graph_mask_attack_050.json"
+        ]
+    }
+}

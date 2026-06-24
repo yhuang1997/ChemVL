@@ -1,0 +1,9 @@
+{
+    "model": {
+        "prompt_learner": "coop",
+        "prior_version": "all"
+},
+    "training": {
+        "finetune_strategy": "prior_guided_tuning"
+    }
+}

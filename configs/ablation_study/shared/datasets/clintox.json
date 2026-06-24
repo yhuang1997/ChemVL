@@ -1,0 +1,26 @@
+{
+    "basic": {
+        "description": "ClinTox: split/hyperparams fixed in study_pretraining; condition from ablation combo."
+    },
+    "dataset": {
+        "dataset": "clintox",
+        "num_tasks": 2,
+        "class_names": ["class1", "class2"]
+    },
+    "regression_scheduler": {
+        "num_classes": null,
+        "bin_mode": null
+    },
+    "model": {
+        "dropout": 0.2,
+        "reduction_ratio": 4
+    },
+    "training": {
+        "epochs": 100,
+        "patience": 50,
+        "batch_size": 16,
+        "optimizer": "Adam",
+        "lr": 0.0001,
+        "weight_decay": 0.001
+    }
+}

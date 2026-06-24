@@ -1,0 +1,15 @@
+{
+    "dataset": {
+        "representation": "graph"
+    },
+    "model": {
+        "graph_encoder": {
+            "type": "MolCLRGIN",
+            "num_layer": 5,
+            "emb_dim": 300,
+            "feat_dim": 512,
+            "drop_ratio": 0.1,
+            "pool": "mean"
+        }
+    }
+}

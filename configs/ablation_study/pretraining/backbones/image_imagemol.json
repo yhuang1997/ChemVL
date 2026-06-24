@@ -1,0 +1,10 @@
+{
+    "model": {
+        "vision_architecture": "RN18*",
+        "text_architecture": null,
+        "fusion_architecture": null
+    },
+    "training": {
+        "finetune_strategy": "fully_tuning"
+    }
+}

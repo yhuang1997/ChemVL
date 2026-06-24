@@ -1,0 +1,74 @@
+{
+    "basic": {
+        "description": "ChemVL image FT \u2014 zoom_50: 224 PNGs with subject at ~50% linear scale (processed/224_zoom_50/). Same default 2D coords as baseline; training aug unchanged.",
+        "log_dir_base": "/mnt/d/wsl-data/chemvl/results/pretraining_ablation",
+        "gpu": "0",
+        "ngpu": 1,
+        "num_workers": 6,
+        "verbose": true,
+        "prefix": "",
+        "save_finetune_ckpt": true,
+        "version": "ft_depiction_image_chemvl_zoom50"
+    },
+    "dataset": {
+        "dataroot": "/mnt/d/wsl-data/chemvl/finetuning_datasets/MPP/classification",
+        "split": "scaffold",
+        "task_type": "classification",
+        "chirality": true,
+        "context_initialization": "",
+        "depiction": {
+            "render_canvas_px": 224,
+            "render_preset": "zoom_50"
+        }
+    },
+    "training": {
+        "finetune_strategy": "fully_tuning",
+        "seed": 1,
+        "start_epoch": 0,
+        "epochs": 100,
+        "batch_size": 64,
+        "optimizer": "Adam",
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "patience": 30,
+        "weighted_CE": false,
+        "prior_lr_factor": 1.0,
+        "max_grad_norm": null,
+        "scheduler": null,
+        "momentum": 0.9
+    },
+    "model": {
+        "vision_architecture": "RN50",
+        "text_architecture": "RN50",
+        "fusion_architecture": "RN50",
+        "imageSize": 224,
+        "logit_scale": 4.605,
+        "prompt_learner": "coop",
+        "prior_version": "all",
+        "attention_mode": "attention",
+        "attention_temperature": 100.0,
+        "context_initialization": "",
+        "dropout": 0.1,
+        "reduction_ratio": 2,
+        "resume": "/mnt/d/wsl-data/chemvl/checkpoints/pretraining/RN50px224.ckpt"
+    },
+    "data_augmentation": {
+        "image_aug": false,
+        "Resize": 256,
+        "CenterCrop": 224,
+        "Normalize_mean": [
+            0.485,
+            0.456,
+            0.406
+        ],
+        "Normalize_std": [
+            0.229,
+            0.224,
+            0.225
+        ]
+    },
+    "regression_scheduler": {
+        "num_classes": null,
+        "bin_mode": null
+    }
+}

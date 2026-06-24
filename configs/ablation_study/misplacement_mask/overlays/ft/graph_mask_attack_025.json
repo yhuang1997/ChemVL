@@ -1,0 +1,53 @@
+{
+    "basic": {
+        "version": "ft_misplacement_mask_graph_gin_chemvl_mask_attack_025",
+        "description": "ChemVL GIN graph FT: train node mask + edge drop ~25% (structure mask attack)."
+    },
+    "dataset": {
+        "dataroot": "/mnt/d/wsl-data/chemvl/finetuning_datasets/MPP/classification",
+        "split": "scaffold",
+        "task_type": "classification",
+        "chirality": true,
+        "context_initialization": "",
+        "representation": "graph",
+        "depiction": {
+            "render_canvas_px": 224,
+            "render_preset": "default"
+        },
+        "chemvl_ablation": {
+            "structure_mask": {
+                "enabled": true,
+                "split": "train",
+                "image": {
+                    "mode": "random_erasing",
+                    "area_ratio": 0.25
+                },
+                "graph": {
+                    "node_mask_fraction": 0.25,
+                    "edge_drop_fraction": 0.25
+                }
+            }
+        }
+    },
+    "model": {
+        "vision_architecture": "RN50",
+        "text_architecture": "RN50",
+        "fusion_architecture": "RN50",
+        "imageSize": 224,
+        "logit_scale": 4.605,
+        "prompt_learner": "coop",
+        "prior_version": "all",
+        "attention_mode": "attention",
+        "attention_temperature": 100.0,
+        "context_initialization": "",
+        "graph_encoder": {
+            "type": "MolCLRGIN",
+            "num_layer": 5,
+            "emb_dim": 300,
+            "feat_dim": 512,
+            "drop_ratio": 0.1,
+            "pool": "mean"
+        },
+        "resume": "/mnt/d/wsl-data/chemvl/checkpoints/pretraining/GIN.ckpt"
+    }
+}

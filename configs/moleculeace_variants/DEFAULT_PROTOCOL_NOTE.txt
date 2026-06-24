@@ -1,0 +1,3 @@
+dataset.protocol "default" is reserved for the original MoleculeACE benchmark study / pip package conventions (see external/MoleculeACE). 
+
+It is not implemented in moleculeace_finetune.py yet; use protocol "MolMCL" to match external/MolMCL/scripts/finetune.py for splits and run reporting.

@@ -1,0 +1,52 @@
+# Per-dataset KGPT training overrides for dummy prompt learner ablation.
+# Applied on top of --uniform-training-hparams (dummy_prompt_kgpt_base.json).
+# Merge order: defaults -> datasets.<name> -> datasets.<name>.<image|graph>
+#
+# Draft / alternate snapshot. run.sh uses params_best.yaml when present.
+#
+# Shared with misplacement KGPT ablation; tox21 omitted (uniform base defaults).
+
+defaults: {}
+
+datasets:
+  bace:
+    image:
+      training:
+        batch_size: 256
+        optimizer: AdamW
+        lr: 0.0001
+        weight_decay: 0.0001
+    graph:
+      training:
+        batch_size: 8
+        optimizer: Adam
+        lr: 0.0001
+        weight_decay: 0.0001
+
+  bbbp:
+    image:
+      training:
+        batch_size: 128
+        optimizer: AdamW
+        lr: 0.0005
+        weight_decay: 0.001
+    graph:
+      training:
+        batch_size: 256
+        optimizer: AdamW
+        lr: 0.0001
+        weight_decay: 0.001
+
+  clintox:
+    image:
+      training:
+        batch_size: 16
+        optimizer: Adam
+        lr: 0.0001
+        weight_decay: 0.001
+    graph:
+      training:
+        batch_size: 8
+        optimizer: Adam
+        lr: 0.0005
+        weight_decay: 0.001

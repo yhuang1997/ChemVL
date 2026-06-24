@@ -1,0 +1,16 @@
+{
+    "basic": {
+        "description": "QM7 regression for graph KGPT HPO / smoke (T1)."
+    },
+    "dataset": {
+        "dataset": "qm7",
+        "dataroot": "/mnt/d/wsl-data/chemvl/finetuning_datasets/MPP/regression",
+        "task_type": "regression",
+        "num_tasks": 1,
+        "class_names": ["class1", "class2"]
+    },
+    "regression_scheduler": {
+        "num_classes": 100,
+        "bin_mode": "quantile"
+    }
+}

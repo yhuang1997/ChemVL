@@ -1,0 +1,43 @@
+# Provenance (maintainer): case molecules match legacy MoleculeNet visual interpretability bundle.
+id: case_moleculenet_curated
+title: MoleculeNet curated case studies (BBBP + BACE)
+mode: case_panel
+
+defaults:
+  task_id: 0
+  eigen_smooth: true
+  aug_smooth: true
+  typing: true
+  target_fn_name: softmax
+  upstream: true
+  downstream: true
+  descriptors:
+    - NumAromaticRings
+    - fr_benzene
+    - NOCount
+    - fr_halogen
+  pretrained_ckpt: "{CHEMVL_DATA_ROOT}/checkpoints/pretraining/RN50px224.ckpt"
+  top_k: 15
+  dpi: 150
+  formats:
+    - png
+
+checkpoint_root: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/presets/knowledge_prompt_tuning"
+
+cases:
+  - name: Cebaracetam
+    dataset: bbbp
+    smiles: "C1=CC(=CC=C1C3CN(CC(N2CC(NCC2)=O)=O)C(C3)=O)Cl"
+    label: 1
+  - name: Dinazafone
+    dataset: bbbp
+    smiles: "C1=C(C(=CC=C1Cl)N(C(CNCC(C)=C)=O)C)C(C2=CC=CC=C2)=O"
+    label: 1
+  - name: CHEMBL1092788
+    dataset: bace
+    smiles: "Fc1ccc(F)cc1-c1cc(ccc1)[C@]1(N=C(N)N(C)C1=O)c1ccncc1"
+    label: 1
+  - name: 3ivi
+    dataset: bace
+    smiles: "Fc1cc(cc(F)c1)C[C@H](NC(=O)C)[C@H](O)C[NH2+][C@]1(CCc2n[nH]cc2C1)c1cc(ccc1)C(C)(C)C"
+    label: 1

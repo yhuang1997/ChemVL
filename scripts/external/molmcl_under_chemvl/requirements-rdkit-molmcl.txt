@@ -1,0 +1,3 @@
+# Pin RDKit for MolMCL × ChemVL: matches typical chemvl env and avoids
+# strict valence failures on a few MoleculeNet HIV rows (see molmcl_under_chemvl README).
+rdkit-pypi==2022.9.5

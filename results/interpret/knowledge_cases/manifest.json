@@ -1,0 +1,22 @@
+[
+  {
+    "case": "Cebaracetam",
+    "dataset": "bbbp",
+    "image": "Cebaracetam.png"
+  },
+  {
+    "case": "Dinazafone",
+    "dataset": "bbbp",
+    "image": "Dinazafone.png"
+  },
+  {
+    "case": "CHEMBL1092788",
+    "dataset": "bace",
+    "image": "CHEMBL1092788.png"
+  },
+  {
+    "case": "3ivi",
+    "dataset": "bace",
+    "image": "3ivi.png"
+  }
+]

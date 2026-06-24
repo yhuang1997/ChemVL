@@ -1,0 +1,40 @@
+{
+    "basic": {
+        "version": "ft_descriptor_only_feature_all_h128_do10",
+        "description": "Descriptor-only @feature all (208d): H3: D2s [128,64] dropout=0.1; StandardScaler on train."
+    },
+    "dataset": {
+        "dataroot": "/mnt/d/wsl-data/chemvl/finetuning_datasets/MPP/classification",
+        "split": "scaffold",
+        "task_type": "classification",
+        "chirality": true,
+        "context_initialization": "",
+        "representation": "image",
+        "depiction": {
+            "render_canvas_px": 224,
+            "render_preset": "default"
+        },
+        "descriptor_only_mode": "feature",
+        "prior_descriptor_version": "all"
+    },
+    "model": {
+        "vision_architecture": "RN50",
+        "text_architecture": "RN50",
+        "fusion_architecture": "RN50",
+        "imageSize": 224,
+        "logit_scale": 4.605,
+        "prompt_learner": "coop",
+        "prior_version": "all",
+        "attention_mode": "attention",
+        "attention_temperature": 100.0,
+        "context_initialization": "",
+        "resume": null,
+        "descriptor_only": {
+            "hidden_dims": [
+                128,
+                64
+            ],
+            "dropout": 0.1
+        }
+    }
+}

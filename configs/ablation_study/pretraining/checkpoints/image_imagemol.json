@@ -1,0 +1,8 @@
+{
+    "basic": {
+        "version": "pretrain_ablation_image_imagemol"
+    },
+    "model": {
+        "resume": "/mnt/d/wsl-data/chemvl/checkpoints/external/ImageMol.pth.tar"
+    }
+}

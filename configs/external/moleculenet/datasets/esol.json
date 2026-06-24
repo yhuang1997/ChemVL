@@ -1,0 +1,10 @@
+{
+    "dataset": {
+        "dataset": "esol",
+        "dataroot": "/mnt/d/wsl-data/chemvl/finetuning_datasets/MPP/regression",
+        "task_type": "regression",
+        "num_tasks": 1,
+        "class_names": ["class1", "class2"]
+    },
+    "regression_scheduler": {"num_classes": 100, "bin_mode": "quantile"}
+}

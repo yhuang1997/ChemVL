@@ -1,0 +1,102 @@
+# Provenance (maintainer): MoleculeACE visual-attention cases (11 molecules, 4 targets).
+# Hub layout: checkpoints/finetuning/moleculeace/{TARGET}/{run_id}/best.pth + config.json
+id: case_moleculeace_curated
+title: MoleculeACE curated case studies (Grad-CAM panels)
+mode: case_panel
+benchmark: moleculeace
+
+defaults:
+  task_id: 0
+  eigen_smooth: true
+  aug_smooth: true
+  typing: true
+  upstream: true
+  downstream: true
+  upstream_target_fn_name: softmax
+  downstream_target_fn_name: rmse
+  descriptors:
+    - fr_benzene
+    - fr_halogen
+  pretrained_ckpt: "{CHEMVL_DATA_ROOT}/checkpoints/pretraining/RN50px224.ckpt"
+  dpi: 150
+  formats:
+    - png
+
+cases:
+  - id: CHEMBL204_Ki_204_Ki_all_series_0012_0001
+    dataset: CHEMBL204_Ki
+    mol_key: 204_Ki_all_series_0012_0001
+    log_dir: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL204_Ki/2026_04_19_02_09"
+    ckpt: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL204_Ki/2026_04_19_02_09/best.pth"
+    smiles: CCOC(=O)c1cc2ccc(OC3CCN(C(C)=N)CC3)cc2n1Cc1ccc2ccc(C(=N)N)cc2c1
+    gt: -2.556303
+  - id: CHEMBL204_Ki_204_Ki_all_series_0012_0002
+    dataset: CHEMBL204_Ki
+    mol_key: 204_Ki_all_series_0012_0002
+    log_dir: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL204_Ki/2026_04_19_02_09"
+    ckpt: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL204_Ki/2026_04_19_02_09/best.pth"
+    smiles: COC(=O)c1cc2ccc(OC3CCN(C(C)=N)CC3)cc2n1Cc1ccc2ccc(C(=N)N)cc2c1
+    gt: -2.255273
+  - id: CHEMBL219_Ki_219_Ki_all_series_0042_0000
+    dataset: CHEMBL219_Ki
+    mol_key: 219_Ki_all_series_0042_0000
+    log_dir: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL219_Ki/2026_04_19_07_45"
+    ckpt: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL219_Ki/2026_04_19_07_45/best.pth"
+    smiles: COc1cc(Br)cc(C(=O)NCCN2CCc3ccccc3C2)c1OC
+    gt: -1.680336
+  - id: CHEMBL219_Ki_219_Ki_all_series_0042_0001
+    dataset: CHEMBL219_Ki
+    mol_key: 219_Ki_all_series_0042_0001
+    log_dir: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL219_Ki/2026_04_19_07_45"
+    ckpt: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL219_Ki/2026_04_19_07_45/best.pth"
+    smiles: COc1cc2c(cc1OC)CN(CCNC(=O)c1cc(Br)cc(OC)c1OC)CC2
+    gt: -2.423246
+  - id: CHEMBL1871_Ki_ac_delta3_0000_0000
+    dataset: CHEMBL1871_Ki
+    mol_key: ac_delta3_0000_0000
+    log_dir: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL1871_Ki/2026_05_18_23_06"
+    ckpt: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL1871_Ki/2026_05_18_23_06/best.pth"
+    smiles: COc1c(O)ccc2c1-c1ccc3[nH]c(=O)cc(C)c3c1CO2
+    gt: -0.69897
+  - id: CHEMBL1871_Ki_ac_delta3_0000_0001
+    dataset: CHEMBL1871_Ki
+    mol_key: ac_delta3_0000_0001
+    log_dir: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL1871_Ki/2026_05_18_23_06"
+    ckpt: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL1871_Ki/2026_05_18_23_06/best.pth"
+    smiles: COc1cccc2c1-c1ccc3[nH]c(=O)cc(C)c3c1C(OC)O2
+    gt: -3.370328
+  - id: CHEMBL2835_Ki_2835_Ki_all_series_0003_0000
+    dataset: CHEMBL2835_Ki
+    mol_key: 2835_Ki_all_series_0003_0000
+    log_dir: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL2835_Ki/2026_04_20_03_06"
+    ckpt: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL2835_Ki/2026_04_20_03_06/best.pth"
+    smiles: CC(c1ccccc1)N1CCN(C(=O)Cn2cc(NC(=O)c3cnn4cccnc34)c(-c3cc(Cl)ccc3OC(F)F)n2)CC1
+    gt: 0.318759
+  - id: CHEMBL2835_Ki_2835_Ki_all_series_0004_0000
+    dataset: CHEMBL2835_Ki
+    mol_key: 2835_Ki_all_series_0004_0000
+    log_dir: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL2835_Ki/2026_04_20_03_06"
+    ckpt: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL2835_Ki/2026_04_20_03_06/best.pth"
+    smiles: N#CC1(c2ccccc2)CCN(C(=O)Cn2cc(NC(=O)c3cnn4cccnc34)c(-c3cc(Cl)ccc3OC(F)F)n2)CC1
+    gt: 0.318759
+  - id: CHEMBL2835_Ki_2835_Ki_all_series_0008_0007
+    dataset: CHEMBL2835_Ki
+    mol_key: 2835_Ki_all_series_0008_0007
+    log_dir: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL2835_Ki/2026_04_20_03_06"
+    ckpt: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL2835_Ki/2026_04_20_03_06/best.pth"
+    smiles: CN(C)C1CCN(C(=O)Cn2cc(NC(=O)c3c(N)nn4cccnc34)c(-c3cc(Cl)ccc3OC(F)F)n2)C1
+    gt: 0.19382
+  - id: CHEMBL2835_Ki_2835_Ki_all_series_0010_0001
+    dataset: CHEMBL2835_Ki
+    mol_key: 2835_Ki_all_series_0010_0001
+    log_dir: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL2835_Ki/2026_04_20_03_06"
+    ckpt: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL2835_Ki/2026_04_20_03_06/best.pth"
+    smiles: CN(C)C1CN(C(=O)Cn2cc(NC(=O)c3c(N)nn4cccnc34)c(-c3cc(Cl)ccc3OC(F)F)n2)C1
+    gt: 0.283997
+  - id: CHEMBL2835_Ki_2835_Ki_all_series_0020_0001
+    dataset: CHEMBL2835_Ki
+    mol_key: 2835_Ki_all_series_0020_0001
+    log_dir: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL2835_Ki/2026_04_20_03_06"
+    ckpt: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL2835_Ki/2026_04_20_03_06/best.pth"
+    smiles: O=C(Nc1cn(CC(=O)N2C[C@@H]3CNC[C@@H]3C2)nc1-c1cc(Cl)ccc1OC(F)F)c1cnn2cccnc12
+    gt: 0.180456

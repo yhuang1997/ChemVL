@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "name": "c_downstream_chembl1871_notebook",
+  "mode": "downstream",
+  "common": {
+    "model_ckpt": "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL1871_Ki/2026_05_18_23_06/best.pth",
+    "pretraining_resume": "{CHEMVL_DATA_ROOT}/checkpoints/pretraining/RN50px224.ckpt",
+    "seed": 2024,
+    "cache_base": "{CHEMVL_DATA_ROOT}/representation_analysis_data/cache_image_text_features",
+    "text_target_mode": "maxScore"
+  },
+  "downstream": {
+    "dataset_name": "CHEMBL1871_Ki",
+    "downstream_csv_file": "{CHEMVL_DATA_ROOT}/finetuning_datasets/MoleculeACE/CHEMBL1871_Ki/processed/CHEMBL1871_Ki_processed_ac.csv",
+    "label_col": "label",
+    "label_parse_space_separated": false,
+    "task_id": 0,
+    "task_type": "regression",
+    "tsne_colorbar_label": "log10 Ki",
+    "finetune_cfg_path": "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/moleculeace/CHEMBL1871_Ki/2026_05_18_23_06/config.json",
+    "combined_alpha_list": [0.0, 0.2, 0.4, 0.5, 0.75, 1.0],
+    "overlay_ac_mols": true,
+    "tsne_alpha_montage": true,
+    "tsne_montage_max_cols": 3,
+    "tsne_metrics": {
+      "enabled": true,
+      "ls_neighbor_space": "tsne2d",
+      "neighbor_ks": [5, 10, 20],
+      "np_enabled": false
+    },
+    "cluster_trajectory": {
+      "enabled": false
+    }
+  },
+  "reducer": {
+    "name": "tsne",
+    "params": {
+      "n_components": 2,
+      "perplexity": 5.0,
+      "random_state": 2025
+    }
+  },
+  "outputs": {
+    "out_dir": "{REPO_ROOT}/results/notebooks/c_downstream_chembl1871",
+    "source_csv": "tsne_source_data.csv"
+  }
+}

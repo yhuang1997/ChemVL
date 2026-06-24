@@ -1,0 +1,25 @@
+# MolCLR graph hyperparameters (under ChemVL external backend).
+# Merged in utils/external/molclr/molclr_external_config.py after config_finetune.yaml.
+# Per backbone: GIN scratch/@MolCLR share clintox.gin; GCN scratch/@MolCLR share clintox.gcn.
+
+defaults:
+  note: "Global defaults from external/MolCLR/config_finetune.yaml unless overridden below."
+
+datasets:
+  clintox:
+    gin:
+      epochs: 150
+      init_base_lr: 5.0e-5
+      init_lr: 3.0e-4
+    gcn:
+      # GCN shares gin hyperparameter block for formal baselines
+      epochs: 150
+      init_base_lr: 5.0e-5
+      init_lr: 3.0e-4
+  freesolv:
+    batch_size: 16
+    init_lr: 1.0e-4
+    init_base_lr: 5.0e-5
+    epochs: 100
+  qm7:
+    note: "Keep MolCLR defaults; scaffold MAE below paper reflects ChemVL split + official z-score/L1."

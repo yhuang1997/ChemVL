@@ -1,0 +1,8 @@
+# One CHEMBL task id per line (must match folder name under dataset.dataroot).
+# Copy to e.g. configs/moleculeace_variants/dataset_list_30.txt and fill all 30 names, then:
+#   export DATASET_LIST=configs/moleculeace_variants/dataset_list_30.txt
+# MolMCL under ChemVL baseline: configs/external/molmcl/dataset_list_moleculeace30.example.txt
+
+CHEMBL2047_EC50
+# CHEMBL2034_Ki
+# ...

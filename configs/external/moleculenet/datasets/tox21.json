@@ -1,0 +1,10 @@
+{
+    "dataset": {
+        "dataset": "tox21",
+        "dataroot": "/mnt/d/wsl-data/chemvl/finetuning_datasets/MPP/classification",
+        "task_type": "classification",
+        "num_tasks": 12,
+        "class_names": ["class1", "class2"]
+    },
+    "regression_scheduler": {"num_classes": null, "bin_mode": null}
+}

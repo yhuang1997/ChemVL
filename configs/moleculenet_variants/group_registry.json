@@ -1,0 +1,42 @@
+{
+    "image_chemvl_baseline_lb": {
+        "config_chain": [
+            "configs/chemvl_baselines/image_chemvl_baseline_lb.json"
+        ]
+    },
+    "image_chemvl_baseline_ft": {
+        "config_chain": [
+            "configs/chemvl_baselines/image_chemvl_baseline_ft.json"
+        ]
+    },
+    "image_chemvl_baseline_pt": {
+        "config_chain": [
+            "configs/chemvl_baselines/image_chemvl_baseline_pt.json"
+        ]
+    },
+    "image_chemvl_baseline_kgpt": {
+        "config_chain": [
+            "configs/chemvl_baselines/image_chemvl_baseline_kgpt.json"
+        ]
+    },
+    "graph_gin_chemvl_baseline_lb": {
+        "config_chain": [
+            "configs/chemvl_baselines/graph_gin_chemvl_baseline_lb.json"
+        ]
+    },
+    "graph_gin_chemvl_baseline_ft": {
+        "config_chain": [
+            "configs/chemvl_baselines/graph_gin_chemvl_baseline_ft.json"
+        ]
+    },
+    "graph_gin_chemvl_baseline_pt": {
+        "config_chain": [
+            "configs/chemvl_baselines/graph_gin_chemvl_baseline_pt.json"
+        ]
+    },
+    "graph_gin_chemvl_baseline_kgpt": {
+        "config_chain": [
+            "configs/chemvl_baselines/graph_gin_chemvl_baseline_kgpt.json"
+        ]
+    }
+}

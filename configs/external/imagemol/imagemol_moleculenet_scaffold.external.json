@@ -1,0 +1,59 @@
+{
+    "basic": {
+        "description": "ImageMol MoleculeNet (scaffold). Per-dataset hparams in params_imagemol.yaml.",
+        "log_dir_base": "/mnt/d/wsl-data/chemvl/results/baseline_methods",
+        "gpu": "0",
+        "ngpu": 1,
+        "num_workers": 4,
+        "verbose": true,
+        "save_finetune_ckpt": false,
+        "version": "imagemol_moleculenet"
+    },
+    "dataset": {
+        "benchmark": "moleculenet",
+        "dataset": "bbbp",
+        "dataroot": "/mnt/d/wsl-data/chemvl/finetuning_datasets/MPP/classification",
+        "task_type": "classification",
+        "num_tasks": 1,
+        "split": "scaffold",
+        "chirality": true,
+        "representation": "image"
+    },
+    "training": {
+        "finetune_strategy": "fully_tuning",
+        "seed": 1,
+        "momentum": 0.9,
+        "weight_decay": 1e-05,
+        "weighted_CE": false
+    },
+    "model": {
+        "finetune_backend": "imagemol_moleculenet",
+        "imageSize": 224,
+        "imagemol": {
+            "resume": "/mnt/d/wsl-data/chemvl/checkpoints/external/ImageMol.pth.tar",
+            "external_hparams_yaml": "configs/external/imagemol/params_imagemol.yaml",
+            "resume_key": "state_dict"
+        }
+    },
+    "data_augmentation": {
+        "image_aug": true,
+        "CenterCrop": 224,
+        "HorizontalFlip": {},
+        "Rotation": {
+            "degrees": 360
+        },
+        "RandomGrayscale": {
+            "p": 0.2
+        },
+        "Normalize_mean": [
+            0.485,
+            0.456,
+            0.406
+        ],
+        "Normalize_std": [
+            0.229,
+            0.224,
+            0.225
+        ]
+    }
+}

@@ -1,0 +1,91 @@
+{
+    "_tutorial": "TUTORIAL \u2014 MoleculeACE: ChEMBL target CHEMBL2047_EC50 (EC50 regression, values often used in log10 via moleculeace_in_log10). protocol=MolMCL uses the same scaffold-like cluster split as the MolMCL paper code. Entry: python finetune_moleculeace.py --config <this file>. Set CHEMVL_DATA_ROOT; place MoleculeACE CSVs under finetuning_datasets/MoleculeACE per ChemVL layout.",
+    "basic": {
+        "description": "Tutorial: MoleculeACE CHEMBL2047_EC50 regression with MolMCL split protocol. See root README Fine-tuning section.",
+        "log_dir_base": "./results/tutorials_moleculeace_chembl2047",
+        "gpu": "0",
+        "ngpu": 1,
+        "num_workers": 4,
+        "verbose": true,
+        "prefix": "",
+        "save_finetune_ckpt": true,
+        "version": "tutorial_moleculeace_chembl2047_ec50_molmcl"
+    },
+    "dataset": {
+        "benchmark": "moleculeace",
+        "protocol": "MolMCL",
+        "dataset": "CHEMBL2047_EC50",
+        "dataroot": "{CHEMVL_DATA_ROOT}/finetuning_datasets/MoleculeACE",
+        "task_type": "regression",
+        "num_tasks": 1,
+        "split": "molmcl",
+        "chirality": true,
+        "context_initialization": "",
+        "depiction": {
+            "render_canvas_px": 224,
+            "render_preset": "default"
+        },
+        "moleculeace_in_log10": true,
+        "moleculeace_split": {
+            "n_clusters": 5,
+            "val_size": 0.1,
+            "test_size": 0.1,
+            "similarity": 0.9,
+            "potency_fold": 10,
+            "remove_stereo": false
+        }
+    },
+    "training": {
+        "finetune_strategy": "fully_tuning",
+        "eval_metric": "r2",
+        "seed": 1,
+        "start_epoch": 0,
+        "epochs": 50,
+        "batch_size": 32,
+        "optimizer": "Adam",
+        "scheduler": null,
+        "lr": 0.0005,
+        "weight_decay": 1e-06,
+        "momentum": 0.9,
+        "weighted_CE": false,
+        "prior_lr_factor": 1.0,
+        "max_grad_norm": null,
+        "patience": 30
+    },
+    "regression_scheduler": {
+        "num_classes": 100,
+        "bin_mode": "quantile",
+        "labels_csv_path": null
+    },
+    "model": {
+        "vision_architecture": "RN50",
+        "text_architecture": "RN50",
+        "fusion_architecture": "RN50",
+        "resume": "{CHEMVL_DATA_ROOT}/checkpoints/pretraining/RN50px224.ckpt",
+        "imageSize": 224,
+        "logit_scale": 4.605,
+        "prompt_learner": "coop",
+        "prior_version": "all",
+        "attention_mode": "attention",
+        "attention_temperature": 100.0,
+        "dropout": 0.2,
+        "reduction_ratio": 4,
+        "context_initialization": null
+    },
+    "data_augmentation": {
+        "image_aug": false,
+        "multi_view": false,
+        "Resize": 256,
+        "CenterCrop": 224,
+        "Normalize_mean": [
+            0.485,
+            0.456,
+            0.406
+        ],
+        "Normalize_std": [
+            0.229,
+            0.224,
+            0.225
+        ]
+    }
+}

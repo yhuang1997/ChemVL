@@ -1,0 +1,43 @@
+{
+    "basic": {
+        "description": "MoleculeNet + MolMCL GIN (yaml per task via {dataset}_gin placeholder).",
+        "log_dir_base": "/mnt/d/wsl-data/chemvl/results/baseline_methods",
+        "gpu": "0",
+        "ngpu": 1,
+        "num_workers": 0,
+        "verbose": true,
+        "prefix": "",
+        "save_finetune_ckpt": false,
+        "version": "molmcl_gin_moleculenet"
+    },
+    "dataset": {
+        "benchmark": "moleculenet",
+        "dataset": "hiv",
+        "dataroot": "/mnt/d/wsl-data/chemvl/finetuning_datasets",
+        "task_type": "classification",
+        "num_tasks": 1,
+        "split": "scaffold",
+        "chirality": true
+    },
+    "training": {
+        "finetune_strategy": "fully_tuning",
+        "eval_metric": "rocauc",
+        "seed": 1,
+        "start_epoch": 0,
+        "weighted_CE": false
+    },
+    "regression_scheduler": {
+        "labels_csv_path": null
+    },
+    "model": {
+        "finetune_backend": "molmcl_moleculenet",
+        "molmcl": {
+            "molmcl_root": "external/MolMCL",
+            "external_config": "configs/external/molmcl/base_config/moleculenet/{dataset}_gin.yaml",
+            "molmcl_overrides": {}
+        }
+    },
+    "data_augmentation": {
+        "multi_view": false
+    }
+}

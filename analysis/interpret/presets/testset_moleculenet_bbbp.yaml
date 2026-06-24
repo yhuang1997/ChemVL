@@ -1,0 +1,29 @@
+# Provenance (maintainer): test-split Grad-CAM gallery (Figure-visual_attention style).
+id: testset_moleculenet_bbbp
+title: MoleculeNet BBBP test-split Grad-CAM gallery
+mode: testset_gallery
+
+benchmark: moleculenet
+dataset: bbbp
+split: test
+max_molecules: 12
+seed: 123
+
+defaults:
+  task_id: 0
+  eigen_smooth: true
+  aug_smooth: true
+  typing: true
+  upstream: true
+  downstream: true
+  descriptors:
+    - NumAromaticRings
+    - fr_benzene
+    - NOCount
+    - fr_halogen
+  pretrained_ckpt: "{CHEMVL_DATA_ROOT}/checkpoints/pretraining/RN50px224.ckpt"
+  dpi: 150
+  formats:
+    - png
+
+ckpt_dir: "{CHEMVL_DATA_ROOT}/checkpoints/finetuning/presets/knowledge_prompt_tuning/bbbp"

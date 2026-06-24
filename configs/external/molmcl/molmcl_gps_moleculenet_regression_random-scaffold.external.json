@@ -1,0 +1,43 @@
+{
+    "basic": {
+        "description": "MoleculeNet regression + MolMCL GNN (yaml per task via {dataset}).",
+        "log_dir_base": "/mnt/d/wsl-data/chemvl/results/baseline_methods",
+        "gpu": "0",
+        "ngpu": 1,
+        "num_workers": 0,
+        "verbose": true,
+        "prefix": "",
+        "save_finetune_ckpt": false,
+        "version": "molmcl_gps_moleculenet"
+    },
+    "dataset": {
+        "benchmark": "moleculenet",
+        "dataset": "esol",
+        "dataroot": "/mnt/d/wsl-data/chemvl/finetuning_datasets",
+        "task_type": "regression",
+        "num_tasks": 1,
+        "split": "random_scaffold",
+        "chirality": true
+    },
+    "training": {
+        "finetune_strategy": "fully_tuning",
+        "eval_metric": "rmse",
+        "seed": 1,
+        "start_epoch": 0,
+        "weighted_CE": false
+    },
+    "regression_scheduler": {
+        "labels_csv_path": null
+    },
+    "model": {
+        "finetune_backend": "molmcl_moleculenet",
+        "molmcl": {
+            "molmcl_root": "external/MolMCL",
+            "external_config": "configs/external/molmcl/base_config/moleculenet/{dataset}.yaml",
+            "molmcl_overrides": {}
+        }
+    },
+    "data_augmentation": {
+        "multi_view": false
+    }
+}

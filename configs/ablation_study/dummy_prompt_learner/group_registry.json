@@ -1,0 +1,38 @@
+{
+    "image_chemvl_kgpt_random_fixed_query": {
+        "config_chain": [
+            "configs/ablation_study/dummy_prompt_learner/dummy_prompt_kgpt_base.json",
+            "configs/ablation_study/dummy_prompt_learner/overlays/kgpt/image_random_fixed_query.json"
+        ]
+    },
+    "graph_gin_chemvl_kgpt_random_fixed_query": {
+        "config_chain": [
+            "configs/ablation_study/dummy_prompt_learner/dummy_prompt_kgpt_base.json",
+            "configs/ablation_study/dummy_prompt_learner/overlays/kgpt/graph_random_fixed_query.json"
+        ]
+    },
+    "image_chemvl_kgpt_random_fixed_query_structure_frozen": {
+        "config_chain": [
+            "configs/ablation_study/dummy_prompt_learner/dummy_prompt_kgpt_base.json",
+            "configs/ablation_study/dummy_prompt_learner/overlays/kgpt/image_random_fixed_query_structure_frozen.json"
+        ]
+    },
+    "graph_gin_chemvl_kgpt_random_fixed_query_structure_frozen": {
+        "config_chain": [
+            "configs/ablation_study/dummy_prompt_learner/dummy_prompt_kgpt_base.json",
+            "configs/ablation_study/dummy_prompt_learner/overlays/kgpt/graph_random_fixed_query_structure_frozen.json"
+        ]
+    },
+    "image_chemvl_kgpt_learnable_query_structure_frozen": {
+        "config_chain": [
+            "configs/ablation_study/dummy_prompt_learner/dummy_prompt_kgpt_base.json",
+            "configs/ablation_study/dummy_prompt_learner/overlays/kgpt/image_learnable_query_structure_frozen.json"
+        ]
+    },
+    "graph_gin_chemvl_kgpt_learnable_query_structure_frozen": {
+        "config_chain": [
+            "configs/ablation_study/dummy_prompt_learner/dummy_prompt_kgpt_base.json",
+            "configs/ablation_study/dummy_prompt_learner/overlays/kgpt/graph_learnable_query_structure_frozen.json"
+        ]
+    }
+}

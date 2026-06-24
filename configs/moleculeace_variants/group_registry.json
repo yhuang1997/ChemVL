@@ -1,0 +1,42 @@
+{
+    "image_chemvl_baseline_scratch": {
+        "config_chain": [
+            "configs/moleculeace_variants/image_chemvl_baseline_scratch.json"
+        ]
+    },
+    "image_chemvl_baseline_pt": {
+        "config_chain": [
+            "configs/moleculeace_variants/image_chemvl_baseline_pt.json"
+        ]
+    },
+    "image_chemvl_baseline_ft": {
+        "config_chain": [
+            "configs/moleculeace_variants/image_chemvl_baseline_ft.json"
+        ]
+    },
+    "image_chemvl_baseline_kgpt": {
+        "config_chain": [
+            "configs/moleculeace_variants/image_chemvl_baseline_kgpt.json"
+        ]
+    },
+    "graph_gin_baseline_scratch": {
+        "config_chain": [
+            "configs/moleculeace_variants/graph_gin_baseline_scratch.json"
+        ]
+    },
+    "graph_gin_chemvl_baseline_ft": {
+        "config_chain": [
+            "configs/moleculeace_variants/graph_gin_chemvl_baseline_ft.json"
+        ]
+    },
+    "graph_gin_chemvl_baseline_pt": {
+        "config_chain": [
+            "configs/moleculeace_variants/graph_gin_chemvl_baseline_pt.json"
+        ]
+    },
+    "graph_gin_chemvl_baseline_kgpt": {
+        "config_chain": [
+            "configs/moleculeace_variants/graph_gin_chemvl_baseline_kgpt.json"
+        ]
+    }
+}

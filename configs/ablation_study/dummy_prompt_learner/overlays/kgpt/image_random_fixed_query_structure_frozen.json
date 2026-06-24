@@ -1,0 +1,33 @@
+{
+    "basic": {
+        "version": "kgpt_dummy_prompt_image_chemvl_random_fixed_query_structure_frozen",
+        "description": "ChemVL RN50 image KGPT: frozen random CoOp task query + frozen structure encoder (train prior_fusion + logit_scale only)."
+    },
+    "dataset": {
+        "dataroot": "/mnt/d/wsl-data/chemvl/finetuning_datasets/MPP/classification",
+        "split": "scaffold",
+        "task_type": "classification",
+        "chirality": true,
+        "context_initialization": "",
+        "representation": "image",
+        "depiction": {
+            "render_canvas_px": 224,
+            "render_preset": "default"
+        }
+    },
+    "model": {
+        "vision_architecture": "RN50",
+        "text_architecture": "RN50",
+        "fusion_architecture": "RN50",
+        "imageSize": 224,
+        "logit_scale": 4.605,
+        "prompt_learner": "coop",
+        "prior_version": "all",
+        "attention_mode": "attention",
+        "attention_temperature": 100.0,
+        "context_initialization": "",
+        "freeze_prompt_learner": true,
+        "freeze_structure_encoder": true,
+        "resume": "/mnt/d/wsl-data/chemvl/checkpoints/pretraining/RN50px224.ckpt"
+    }
+}

@@ -1,0 +1,65 @@
+{
+    "image_scratch": {
+        "config_chain": [
+            "configs/ablation_study/pretraining/base.json",
+            "configs/ablation_study/pretraining/backbones/image_chemvl.json",
+            "configs/ablation_study/pretraining/checkpoints/image_scratch.json"
+        ]
+    },
+    "image_chemvl": {
+        "config_chain": [
+            "configs/ablation_study/pretraining/base.json",
+            "configs/ablation_study/pretraining/backbones/image_chemvl.json",
+            "configs/ablation_study/pretraining/checkpoints/image_chemvl.json"
+        ]
+    },
+    "image_imagemol": {
+        "config_chain": [
+            "configs/ablation_study/pretraining/base.json",
+            "configs/ablation_study/pretraining/backbones/image_imagemol.json",
+            "configs/ablation_study/pretraining/checkpoints/image_imagemol.json"
+        ]
+    },
+    "graph_gin_scratch": {
+        "config_chain": [
+            "configs/ablation_study/pretraining/base.json",
+            "configs/ablation_study/pretraining/backbones/graph_gin.json",
+            "configs/ablation_study/pretraining/checkpoints/graph_gin_scratch.json"
+        ]
+    },
+    "graph_gin_molclr": {
+        "config_chain": [
+            "configs/ablation_study/pretraining/base.json",
+            "configs/ablation_study/pretraining/backbones/graph_gin.json",
+            "configs/ablation_study/pretraining/checkpoints/graph_gin_molclr.json"
+        ]
+    },
+    "graph_gin_chemvl": {
+        "config_chain": [
+            "configs/ablation_study/pretraining/base.json",
+            "configs/ablation_study/pretraining/backbones/graph_gin.json",
+            "configs/ablation_study/pretraining/checkpoints/graph_gin_chemvl.json"
+        ]
+    },
+    "graph_gcn_scratch": {
+        "config_chain": [
+            "configs/ablation_study/pretraining/base.json",
+            "configs/ablation_study/pretraining/backbones/graph_gcn.json",
+            "configs/ablation_study/pretraining/checkpoints/graph_gcn_scratch.json"
+        ]
+    },
+    "graph_gcn_molclr": {
+        "config_chain": [
+            "configs/ablation_study/pretraining/base.json",
+            "configs/ablation_study/pretraining/backbones/graph_gcn.json",
+            "configs/ablation_study/pretraining/checkpoints/graph_gcn_molclr.json"
+        ]
+    },
+    "graph_gcn_chemvl": {
+        "config_chain": [
+            "configs/ablation_study/pretraining/base.json",
+            "configs/ablation_study/pretraining/backbones/graph_gcn.json",
+            "configs/ablation_study/pretraining/checkpoints/graph_gcn_chemvl.json"
+        ]
+    }
+}

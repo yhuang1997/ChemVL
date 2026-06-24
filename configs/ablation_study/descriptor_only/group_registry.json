@@ -1,0 +1,14 @@
+{
+    "descriptor_only_feature_all": {
+        "config_chain": [
+            "configs/ablation_study/descriptor_only/descriptor_only_ft_base.json",
+            "configs/ablation_study/descriptor_only/overlays/descriptor_only_feature.json"
+        ]
+    },
+    "descriptor_only_feature_v2_107": {
+        "config_chain": [
+            "configs/ablation_study/descriptor_only/descriptor_only_ft_base.json",
+            "configs/ablation_study/descriptor_only/overlays/descriptor_only_feature_v2_107.json"
+        ]
+    }
+}

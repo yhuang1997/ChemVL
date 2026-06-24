@@ -1,0 +1,53 @@
+# Per-dataset KGPT training overrides for misplacement/mask ablation.
+# Applied on top of --uniform-training-hparams (misplacement_mask_kgpt_base.json).
+# Merge order: defaults -> datasets.<name> -> datasets.<name>.<image|graph>
+#
+# run_kgpt.sh uses params_best.yaml (search winners). params.yaml is a draft / alternate sweep snapshot.
+#
+# Reference values from kgpt_hparam_search (split_scaffold, moleculenet-image / moleculenet-graph-gin).
+# tox21 omitted: keep uniform base defaults (batch_size=64, lr=0.001, Adam, ...).
+
+defaults: {}
+
+datasets:
+  bace:
+    image:
+      training:
+        batch_size: 256
+        optimizer: AdamW
+        lr: 0.0001
+        weight_decay: 0.0001
+    graph:
+      training:
+        batch_size: 8
+        optimizer: Adam
+        lr: 0.0001
+        weight_decay: 0.0001
+
+  bbbp:
+    image:
+      training:
+        batch_size: 128
+        optimizer: AdamW
+        lr: 0.0005
+        weight_decay: 0.001
+    graph:
+      training:
+        batch_size: 256
+        optimizer: AdamW
+        lr: 0.0001
+        weight_decay: 0.001
+
+  clintox:
+    image:
+      training:
+        batch_size: 16
+        optimizer: Adam
+        lr: 0.0001
+        weight_decay: 0.001
+    graph:
+      training:
+        batch_size: 8
+        optimizer: Adam
+        lr: 0.0005
+        weight_decay: 0.001

@@ -1,0 +1,16 @@
+{
+    "basic": {
+        "description": "Lipophilicity (lipo): T2 graph KGPT HPO (GRAPH-005)."
+    },
+    "dataset": {
+        "dataset": "lipophilicity",
+        "dataroot": "/mnt/d/wsl-data/chemvl/finetuning_datasets/MPP/regression",
+        "task_type": "regression",
+        "num_tasks": 1,
+        "class_names": ["class1", "class2"]
+    },
+    "regression_scheduler": {
+        "num_classes": 300,
+        "bin_mode": "quantile"
+    }
+}

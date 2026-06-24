@@ -1,0 +1,45 @@
+{
+    "basic": {
+        "version": "kgpt_misplacement_mask_image_chemvl_mask_attack_050",
+        "description": "ChemVL image KGPT: train RandomErasing ~50% area (structure mask attack)."
+    },
+    "dataset": {
+        "dataroot": "/mnt/d/wsl-data/chemvl/finetuning_datasets/MPP/classification",
+        "split": "scaffold",
+        "task_type": "classification",
+        "chirality": true,
+        "context_initialization": "",
+        "representation": "image",
+        "depiction": {
+            "render_canvas_px": 224,
+            "render_preset": "default"
+        },
+        "chemvl_ablation": {
+            "structure_mask": {
+                "enabled": true,
+                "split": "train",
+                "image": {
+                    "mode": "random_erasing",
+                    "area_ratio": 0.5
+                },
+                "graph": {
+                    "node_mask_fraction": 0.5,
+                    "edge_drop_fraction": 0.5
+                }
+            }
+        }
+    },
+    "model": {
+        "vision_architecture": "RN50",
+        "text_architecture": "RN50",
+        "fusion_architecture": "RN50",
+        "imageSize": 224,
+        "logit_scale": 4.605,
+        "prompt_learner": "coop",
+        "prior_version": "all",
+        "attention_mode": "attention",
+        "attention_temperature": 100.0,
+        "context_initialization": "",
+        "resume": "/mnt/d/wsl-data/chemvl/checkpoints/pretraining/RN50px224.ckpt"
+    }
+}

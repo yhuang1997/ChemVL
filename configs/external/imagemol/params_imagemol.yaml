@@ -1,0 +1,33 @@
+# Per-dataset ImageMol overrides (issue #13 + esol/qm7 tuning). See baseline params_baseline.yaml.
+
+defaults:
+  batch_size: 128
+  lr: 0.01
+  epochs: 100
+
+datasets:
+  # IM-R1 smoke mean 0.735; below paper-5pp (0.801); optional vs default 128/0.01/100
+  clintox:
+    batch_size: 32
+    lr: 0.005
+    epochs: 100
+  sider:
+    batch_size: 16
+    lr: 0.03
+    epochs: 10
+  freesolv:
+    batch_size: 16
+    lr: 0.0005
+    epochs: 20
+  esol:
+    batch_size: 16
+    lr: 0.0005
+    epochs: 100
+  qm7:
+    batch_size: 32
+    lr: 0.0001
+    epochs: 100
+  lipo:
+    batch_size: 8
+    lr: 0.001
+    epochs: 30

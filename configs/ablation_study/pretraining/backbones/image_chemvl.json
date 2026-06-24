@@ -1,0 +1,7 @@
+{
+    "model": {
+        "vision_architecture": "RN50",
+        "text_architecture": "RN50",
+        "fusion_architecture": "RN50"
+    }
+}

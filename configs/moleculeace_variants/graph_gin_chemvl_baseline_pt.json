@@ -1,0 +1,95 @@
+{
+    "basic": {
+        "description": "MoleculeACE graph-GIN ChemVL baseline (PT) + MolMCL protocol. Merge with a regression CoOp config for model/augmentation. Place MolMCL-style CSV (smiles,y) then run tools/datasets/prepare_moleculeace_chemvl.py.",
+        "log_dir_base": "/mnt/d/wsl-data/chemvl/results/moleculeace",
+        "gpu": "0",
+        "ngpu": 1,
+        "num_workers": 4,
+        "verbose": true,
+        "prefix": "",
+        "save_finetune_ckpt": true,
+        "version": "graph_gin_chemvl_baseline_pt"
+    },
+    "dataset": {
+        "benchmark": "moleculeace",
+        "protocol": "MolMCL",
+        "dataset": "CHEMBL2047_EC50",
+        "dataroot": "/mnt/d/wsl-data/chemvl/finetuning_datasets/MoleculeACE",
+        "task_type": "regression",
+        "num_tasks": 1,
+        "split": "molmcl",
+        "chirality": true,
+        "context_initialization": "",
+        "moleculeace_in_log10": true,
+        "moleculeace_split": {
+            "n_clusters": 5,
+            "val_size": 0.1,
+            "test_size": 0.1,
+            "similarity": 0.9,
+            "potency_fold": 10,
+            "remove_stereo": false
+        },
+        "representation": "graph"
+    },
+    "training": {
+        "finetune_strategy": "text_prompt_tuning",
+        "eval_metric": "r2",
+        "seed": 1,
+        "start_epoch": 0,
+        "epochs": 50,
+        "batch_size": 32,
+        "optimizer": "Adam",
+        "scheduler": null,
+        "lr": 0.0005,
+        "weight_decay": 1e-06,
+        "momentum": 0.9,
+        "weighted_CE": false,
+        "prior_lr_factor": 1.0,
+        "max_grad_norm": null,
+        "patience": 30
+    },
+    "regression_scheduler": {
+        "num_classes": 100,
+        "bin_mode": "quantile",
+        "labels_csv_path": null
+    },
+    "model": {
+        "vision_architecture": "RN50",
+        "text_architecture": "RN50",
+        "fusion_architecture": "RN50",
+        "resume": "/mnt/d/wsl-data/chemvl/checkpoints/pretraining/GIN.ckpt",
+        "imageSize": 224,
+        "logit_scale": 4.605,
+        "prompt_learner": "coop",
+        "prior_version": "all",
+        "attention_mode": "attention",
+        "attention_temperature": 100.0,
+        "dropout": 0.2,
+        "reduction_ratio": 4,
+        "context_initialization": null,
+        "graph_encoder": {
+            "type": "MolCLRGIN",
+            "num_layer": 5,
+            "emb_dim": 300,
+            "feat_dim": 512,
+            "drop_ratio": 0.1,
+            "pool": "mean"
+        }
+    },
+    "data_augmentation": {
+        "image_aug": false,
+        "multi_view": false,
+        "Resize": 256,
+        "CenterCrop": 224,
+        "Normalize_mean": [
+            0.485,
+            0.456,
+            0.406
+        ],
+        "Normalize_std": [
+            0.229,
+            0.224,
+            0.225
+        ]
+    }
+}

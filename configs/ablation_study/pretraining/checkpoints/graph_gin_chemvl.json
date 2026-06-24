@@ -1,0 +1,8 @@
+{
+    "basic": {
+        "version": "pretrain_ablation_graph_gin_chemvl"
+    },
+    "model": {
+        "resume": "/mnt/d/wsl-data/chemvl/checkpoints/pretraining/GIN.ckpt"
+    }
+}

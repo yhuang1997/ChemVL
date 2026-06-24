@@ -1,0 +1,8 @@
+{
+    "basic": {
+        "version": "pretrain_ablation_graph_gin_molclr"
+    },
+    "model": {
+        "resume": "/mnt/d/wsl-data/chemvl/checkpoints/external/MolCLR-GIN.ckpt"
+    }
+}

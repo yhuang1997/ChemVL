@@ -1,0 +1,3 @@
+# Split by task type (different BASE_CONFIG / eval_metric):
+#   configs/external/molmcl/dataset_list_moleculenet_cls6.example.txt
+#   configs/external/molmcl/dataset_list_moleculenet_reg4.example.txt

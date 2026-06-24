@@ -1,0 +1,5 @@
+{
+    "training": {
+        "finetune_strategy": "fully_tuning"
+    }
+} 

@@ -1,0 +1,8 @@
+{
+    "basic": {
+        "version": "pretrain_ablation_graph_gcn_scratch"
+    },
+    "model": {
+        "resume": null
+    }
+}

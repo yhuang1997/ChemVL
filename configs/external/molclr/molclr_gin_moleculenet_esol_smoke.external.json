@@ -1,0 +1,48 @@
+{
+    "basic": {
+        "description": "M1 smoke: MolCLR GIN on ESOL (scaffold, 1 epoch).",
+        "log_dir_base": "/mnt/d/wsl-data/chemvl/results/baseline_methods",
+        "gpu": "0",
+        "ngpu": 1,
+        "num_workers": 0,
+        "verbose": true,
+        "prefix": "",
+        "save_finetune_ckpt": false,
+        "version": "molclr_gin_moleculenet_smoke"
+    },
+    "dataset": {
+        "benchmark": "moleculenet",
+        "dataset": "esol",
+        "dataroot": "/mnt/d/wsl-data/chemvl/finetuning_datasets",
+        "task_type": "regression",
+        "num_tasks": 1,
+        "split": "scaffold",
+        "chirality": true
+    },
+    "training": {
+        "finetune_strategy": "fully_tuning",
+        "seed": 1,
+        "start_epoch": 0,
+        "epochs": 1,
+        "weighted_CE": false
+    },
+    "regression_scheduler": {
+        "labels_csv_path": null
+    },
+    "model": {
+        "finetune_backend": "molclr_moleculenet",
+        "molclr": {
+            "molclr_root": "external/MolCLR",
+            "external_config": "external/MolCLR/config_finetune.yaml",
+            "model_type": "gin",
+            "resume": null,
+            "molclr_overrides": {
+                "epochs": 1,
+                "batch_size": 32
+            }
+        }
+    },
+    "data_augmentation": {
+        "multi_view": false
+    }
+}

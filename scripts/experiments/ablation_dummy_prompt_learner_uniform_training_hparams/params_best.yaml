@@ -1,0 +1,70 @@
+# Per-dataset KGPT training overrides for dummy prompt learner ablation.
+# Applied on top of --uniform-training-hparams (dummy_prompt_kgpt_base.json).
+# Merge order: defaults -> datasets.<name> -> datasets.<name>.<image|graph>
+#
+# Default for run.sh. See params.yaml for draft / alternate values.
+#
+# Reference values from kgpt_hparam_search (split_scaffold, moleculenet-image / moleculenet-graph-gin).
+# tox21 omitted: keep uniform base defaults (batch_size=64, lr=0.001, Adam, ...).
+
+defaults: {}
+
+datasets:
+  bace:
+    image:
+      training:
+        batch_size: 64
+        optimizer: Adam
+        lr: 0.0001
+        weight_decay: 0.0001
+        epochs: 50
+    graph:
+      training:
+        batch_size: 8
+        optimizer: Adam
+        lr: 0.0001
+        weight_decay: 0.0001
+
+  bbbp:
+    image:
+      training:
+        batch_size: 16
+        optimizer: AdamW
+        lr: 0.0005
+        weight_decay: 0.001
+        epochs: 50
+    graph:
+      training:
+        batch_size: 256
+        optimizer: AdamW
+        lr: 0.0001
+        weight_decay: 0.001
+
+  clintox:
+    image:
+      training:
+        batch_size: 16
+        optimizer: Adam
+        lr: 0.0001
+        weight_decay: 0.001
+    graph:
+      training:
+        batch_size: 8
+        optimizer: Adam
+        lr: 0.0005
+        weight_decay: 0.001
+  tox21:
+    image:
+      training:
+        batch_size: 8
+        optimizer: Adam
+        lr: 0.0001
+        weight_decay: 0.001
+        epochs: 50
+    graph:
+      training:
+        batch_size: 8
+        optimizer: Adam
+        lr: 0.0001
+        weight_decay: 0.0001
+        epochs: 100

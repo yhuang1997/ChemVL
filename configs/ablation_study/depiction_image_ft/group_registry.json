@@ -1,0 +1,37 @@
+{
+    "image_chemvl_ft_baseline": {
+        "config_chain": [
+            "configs/ablation_study/depiction_image_ft/image_chemvl_ft_baseline.json"
+        ]
+    },
+    "image_chemvl_ft_layoutVar": {
+        "config_chain": [
+            "configs/ablation_study/depiction_image_ft/image_chemvl_ft_layoutVar.json"
+        ]
+    },
+    "image_chemvl_ft_styleVar": {
+        "config_chain": [
+            "configs/ablation_study/depiction_image_ft/image_chemvl_ft_styleVar.json"
+        ]
+    },
+    "image_chemvl_ft_zoom50": {
+        "config_chain": [
+            "configs/ablation_study/depiction_image_ft/image_chemvl_ft_zoom50.json"
+        ]
+    },
+    "image_chemvl_ft_zoom25": {
+        "config_chain": [
+            "configs/ablation_study/depiction_image_ft/image_chemvl_ft_zoom25.json"
+        ]
+    },
+    "image_chemvl_ft_zoom75": {
+        "config_chain": [
+            "configs/ablation_study/depiction_image_ft/image_chemvl_ft_zoom75.json"
+        ]
+    },
+    "image_chemvl_ft_baseline_multiview": {
+        "config_chain": [
+            "configs/ablation_study/depiction_image_ft/image_chemvl_ft_baseline_multiview.json"
+        ]
+    }
+}

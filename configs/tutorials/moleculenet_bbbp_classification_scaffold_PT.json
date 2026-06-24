@@ -1,0 +1,77 @@
+{
+    "_tutorial": "TUTORIAL \u2014 MoleculeNet / MPP: task=bbbp (blood\u2013brain barrier permeability), task_type=classification, split=scaffold (Murcko). Strategy=prior_guided_tuning. Entry: python finetune_moleculenet.py --config <this file>. Set CHEMVL_DATA_ROOT; ensure MPP CSV+images exist under finetuning_datasets/MPP/classification/bbbp/processed/.",
+    "basic": {
+        "version": "tutorial_moleculenet_bbbp_scaffold_prior_guided",
+        "log_dir_base": "./results/tutorials_moleculenet_bbbp",
+        "gpu": "0",
+        "ngpu": 1,
+        "num_workers": 6,
+        "verbose": true,
+        "prefix": "",
+        "save_finetune_ckpt": false,
+        "description": "Tutorial: MoleculeNet BBBP (classification), scaffold split, prior-guided tuning. See root README Fine-tuning section."
+    },
+    "dataset": {
+        "dataset": "bbbp",
+        "dataroot": "{CHEMVL_DATA_ROOT}/finetuning_datasets/MPP/classification",
+        "split": "scaffold",
+        "task_type": "classification",
+        "num_tasks": 1,
+        "class_names": [
+            "class1",
+            "class2"
+        ],
+        "chirality": true,
+        "context_initialization": ""
+    },
+    "regression_scheduler": {
+        "num_classes": null,
+        "bin_mode": null
+    },
+    "model": {
+        "vision_architecture": "RN50",
+        "text_architecture": "RN50",
+        "fusion_architecture": "RN50",
+        "resume": "{CHEMVL_DATA_ROOT}/checkpoints/pretraining/RN50px224.ckpt",
+        "imageSize": 224,
+        "logit_scale": 4.605,
+        "prompt_learner": "coop",
+        "prior_version": "all",
+        "attention_mode": "attention",
+        "attention_temperature": 100.0,
+        "dropout": 0.1,
+        "reduction_ratio": 2,
+        "context_initialization": ""
+    },
+    "training": {
+        "finetune_strategy": "prior_guided_tuning",
+        "seed": 1,
+        "epochs": 20,
+        "start_epoch": 0,
+        "patience": 30,
+        "batch_size": 16,
+        "optimizer": "AdamW",
+        "scheduler": null,
+        "lr": 0.0005,
+        "weight_decay": 0.0001,
+        "momentum": 0.9,
+        "weighted_CE": false,
+        "prior_lr_factor": 1.0,
+        "max_grad_norm": null
+    },
+    "data_augmentation": {
+        "image_aug": false,
+        "Resize": 256,
+        "CenterCrop": 224,
+        "Normalize_mean": [
+            0.485,
+            0.456,
+            0.406
+        ],
+        "Normalize_std": [
+            0.229,
+            0.224,
+            0.225
+        ]
+    }
+}

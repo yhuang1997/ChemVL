@@ -1,0 +1,51 @@
+{
+    "basic": {
+        "description": "MoleculeACE + MolMCL GNN: MolMCL hyperparameters come from model.molmcl.external_config (yaml).",
+        "log_dir_base": "/mnt/d/wsl-data/chemvl/results/moleculeace",
+        "gpu": "0",
+        "ngpu": 1,
+        "num_workers": 0,
+        "verbose": true,
+        "prefix": "",
+        "save_finetune_ckpt": false,
+        "version": "molmcl_gin_moleculeace"
+    },
+    "dataset": {
+        "benchmark": "moleculeace",
+        "protocol": "MolMCL",
+        "dataset": "CHEMBL2047_EC50",
+        "dataroot": "/mnt/d/wsl-data/chemvl/finetuning_datasets/MoleculeACE",
+        "task_type": "regression",
+        "num_tasks": 1,
+        "split": "molmcl",
+        "moleculeace_in_log10": true,
+        "moleculeace_split": {
+            "n_clusters": 5,
+            "val_size": 0.1,
+            "test_size": 0.1,
+            "similarity": 0.9,
+            "potency_fold": 10,
+            "remove_stereo": false
+        }
+    },
+    "training": {
+        "finetune_strategy": "fully_tuning",
+        "eval_metric": "r2",
+        "seed": 1,
+        "start_epoch": 0
+    },
+    "regression_scheduler": {
+        "labels_csv_path": null
+    },
+    "model": {
+        "finetune_backend": "molmcl_moleculeace",
+        "molmcl": {
+            "molmcl_root": "external/MolMCL",
+            "external_config": "configs/external/molmcl/base_config/moleculeace/chembl_gin.yaml",
+            "molmcl_overrides": {}
+        }
+    },
+    "data_augmentation": {
+        "multi_view": false
+    }
+}

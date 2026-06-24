@@ -1,0 +1,9 @@
+[submodule "external/MolMCL"]
+	path = external/MolMCL
+	url = https://github.com/yhuang1997/MolMCL.git
+[submodule "external/MoleculeACE"]
+	path = external/MoleculeACE
+	url = https://github.com/yhuang1997/MoleculeACE.git
+[submodule "external/MolCLR"]
+	path = external/MolCLR
+	url = https://github.com/yhuang1997/MolCLR.git

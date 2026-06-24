@@ -1,0 +1,51 @@
+{
+    "basic": {
+        "log_dir_base": "/mnt/d/wsl-data/chemvl/results/ablation_dummy_structure",
+        "gpu": "0",
+        "ngpu": 1,
+        "num_workers": 6,
+        "verbose": true,
+        "prefix": "",
+        "save_finetune_ckpt": true,
+        "description": "Shared fragment for misplacement + structure-mask ablation KGPT (prior_guided_tuning). Chain with overlays/kgpt/*.json then datasets/<task>.json."
+    },
+    "training": {
+        "finetune_strategy": "prior_guided_tuning",
+        "seed": 1,
+        "start_epoch": 0,
+        "epochs": 100,
+        "batch_size": 64,
+        "optimizer": "Adam",
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "patience": 30,
+        "weighted_CE": false,
+        "prior_lr_factor": 1.0,
+        "max_grad_norm": null,
+        "scheduler": null,
+        "momentum": 0.9
+    },
+    "data_augmentation": {
+        "image_aug": false,
+        "Resize": 256,
+        "CenterCrop": 224,
+        "Normalize_mean": [
+            0.485,
+            0.456,
+            0.406
+        ],
+        "Normalize_std": [
+            0.229,
+            0.224,
+            0.225
+        ]
+    },
+    "model": {
+        "dropout": 0.1,
+        "reduction_ratio": 2
+    },
+    "regression_scheduler": {
+        "num_classes": null,
+        "bin_mode": null
+    }
+}

@@ -1,0 +1,11 @@
+# MoleculeNet 10 (task keys; see configs/external/moleculenet/datasets/<key>.json)
+bbbp
+bace
+clintox
+tox21
+sider
+hiv
+esol
+freesolv
+lipo
+qm7

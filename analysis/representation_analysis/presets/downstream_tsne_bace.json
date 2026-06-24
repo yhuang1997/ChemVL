@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "name": "downstream_tsne_bace",
+  "mode": "downstream",
+  "common": {
+    "model_ckpt": "/mnt/d/wsl-data/chemvl/checkpoints/finetuning/presets/prompt_tuning/bace/clip_text_prompt_tuning_valid_best.pth",
+    "pretraining_resume": "/mnt/d/wsl-data/chemvl/checkpoints/pretraining/RN50px224.ckpt",
+    "seed": 2024,
+    "cache_base": "/mnt/d/wsl-data/chemvl/representation_analysis_data/cache_image_text_features",
+    "text_target_mode": "maxScore"
+  },
+  "downstream": {
+    "dataset_name": "bace",
+    "downstream_csv_file": "/mnt/d/wsl-data/chemvl/finetuning_datasets/MPP/classification/bace/raw/bace.csv",
+    "label_col": "label",
+    "label_parse_space_separated": true,
+    "task_id": 0,
+    "finetune_cfg_path": "/mnt/d/wsl-data/chemvl/checkpoints/finetuning/presets/prompt_tuning/bace/config.json",
+    "combined_alpha_list": [0.0, 0.5]
+  },
+  "reducer": {
+    "name": "tsne",
+    "params": {
+      "n_components": 2,
+      "perplexity": 10,
+      "random_state": 2024
+    }
+  },
+  "outputs": {
+    "out_dir": "/mnt/d/wsl-data/chemvl/results/representation_analysis/downstream_tsne_bace",
+    "source_csv": "tsne_source_data.csv"
+  }
+}

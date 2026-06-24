@@ -1,0 +1,8 @@
+{
+    "training": {
+        "finetune_strategy": "text_prompt_tuning"
+    },
+    "model": {
+        "prompt_learner": "coop"
+    }
+} 

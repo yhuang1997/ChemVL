@@ -1,0 +1,20 @@
+{
+  "_comment": "Archives unpacked by `python tools/hf_download.py unpack` after Hub download.",
+  "archives": [
+    {
+      "id": "finetuning_datasets",
+      "archive": "archives/finetuning_datasets.tar.zst",
+      "source": "finetuning_datasets",
+      "extract_to": ".",
+      "note": "Full MPP + MoleculeACE downstream trees (CSV + default 224 PNG). Depiction ablation subdirs are generated locally."
+    },
+    {
+      "id": "pretrain_10m_106mds",
+      "archive": "archives/pretraining_datasets_10M-106mds.tar.zst",
+      "source": "pretraining_datasets/10M-106mds",
+      "extract_to": "pretraining_datasets",
+      "note": "Graph pretraining metadata (mds.csv, train/test lists). Image PNGs are generated locally via tools/datasets/render_pretrain_images.py — not shipped on Hub."
+    }
+  ],
+  "finetuning_ckpts_archive": "archives/checkpoints_finetuning.tar.zst"
+}

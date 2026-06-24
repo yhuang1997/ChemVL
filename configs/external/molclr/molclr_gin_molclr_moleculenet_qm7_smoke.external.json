@@ -1,0 +1,48 @@
+{
+    "basic": {
+        "description": "M2 smoke: GIN@MolCLR QM7 with label normalization (10 epochs).",
+        "log_dir_base": "/mnt/d/wsl-data/chemvl/results/baseline_methods",
+        "gpu": "0",
+        "ngpu": 1,
+        "num_workers": 0,
+        "verbose": true,
+        "prefix": "",
+        "save_finetune_ckpt": false,
+        "version": "molclr_gin_molclr_moleculenet_smoke"
+    },
+    "dataset": {
+        "benchmark": "moleculenet",
+        "dataset": "qm7",
+        "dataroot": "/mnt/d/wsl-data/chemvl/finetuning_datasets",
+        "task_type": "regression",
+        "num_tasks": 1,
+        "split": "scaffold",
+        "chirality": true
+    },
+    "training": {
+        "finetune_strategy": "fully_tuning",
+        "seed": 1,
+        "start_epoch": 0,
+        "epochs": 10,
+        "weighted_CE": false
+    },
+    "regression_scheduler": {
+        "labels_csv_path": null
+    },
+    "model": {
+        "finetune_backend": "molclr_moleculenet",
+        "molclr": {
+            "molclr_root": "external/MolCLR",
+            "external_config": "external/MolCLR/config_finetune.yaml",
+            "model_type": "gin",
+            "resume": "/mnt/d/wsl-data/chemvl/checkpoints/external/MolCLR-GIN.ckpt",
+            "molclr_overrides": {
+                "epochs": 10,
+                "batch_size": 32
+            }
+        }
+    },
+    "data_augmentation": {
+        "multi_view": false
+    }
+}
