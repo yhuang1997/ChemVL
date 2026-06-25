@@ -17,7 +17,7 @@ Training semantics (differs from internal ``extensive_finetune.py``):
 
 Example::
 
-    python finetune_moleculenet.py --config configs/tutorials/moleculenet_bbbp_classification_scaffold_prior_guided.json
+    python finetune_moleculenet.py --config configs/tutorials/moleculenet_bbbp_classification_scaffold_PT.json
 """
 
 import json

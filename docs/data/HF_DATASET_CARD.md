@@ -89,11 +89,11 @@ Rendering uses `utils/pretrain_image_render.py` (`MolFromSmiles` + RDKit `MolsTo
 ```bash
 # MoleculeNet BBBP fine-tuning
 python finetune_moleculenet.py \
-  --config configs/tutorials/moleculenet_bbbp_classification_scaffold_prior_guided.json
+  --config configs/tutorials/moleculenet_bbbp_classification_scaffold_PT.json
 
 # MoleculeACE fine-tuning
 python finetune_moleculeace.py \
-  --config configs/tutorials/moleculeace_chembl2047_ec50_molmcl_regression.json
+  --config configs/tutorials/moleculeace_chembl2047_ec50_FT.json
 
 # Knowledge-attention showcase (single case)
 python interpret.py knowledge run \

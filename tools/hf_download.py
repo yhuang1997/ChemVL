@@ -2,10 +2,8 @@
 """
 Download and unpack ChemVL data from the Hugging Face **dataset** Hub.
 
-**Status — work in progress:** the Hub dataset snapshot and this helper are committed
-for convenience, but uploads / LFS objects may still be **incomplete** or flaky
-(network, SSL). If download fails or stalls, use the **optional Quark mirror**
-(time-limited) described in the root ``README.md`` until the Hub side is stable.
+Official dataset: ``yzhuang1997/chemvl-data``
+(https://huggingface.co/datasets/yzhuang1997/chemvl-data)
 
 Subcommands:
 
@@ -15,6 +13,9 @@ Subcommands:
 After **download + unpack**, training YAML paths such as
 ``data_root / "pretraining_datasets" / "10M-106mds" / "mds.csv"`` resolve when
 ``data_cfg.data_root`` equals ``CHEMVL_DATA_ROOT``.
+
+Optional: pin a Hub revision with ``download --revision <commit>`` (e.g. a known
+good snapshot hash from the dataset page).
 
 See ``docs/data/HF_DATASET_CARD.md`` for the full after-unpack tree.
 """
@@ -73,10 +74,6 @@ def cmd_download(args: argparse.Namespace) -> int:
         )
         return 2
 
-    print(
-        "[WIP] Hub snapshot/LFS may be incomplete or flaky; see README optional Quark mirror if needed.",
-        flush=True,
-    )
     kwargs = {
         "repo_id": args.repo_id,
         "repo_type": "dataset",
@@ -90,8 +87,7 @@ def cmd_download(args: argparse.Namespace) -> int:
     print(f"Set CHEMVL_DATA_ROOT (and config paths) to: {os.path.abspath(local_dir)}")
     print(
         "\nNext: extract .tar.zst archives into the same layout:\n"
-        "  python tools/hf_download.py unpack\n"
-        "(Archives are under archives/; see docs/data/HF_DATA_MANIFEST.md)"
+        "  python tools/hf_download.py unpack"
     )
     return 0
 

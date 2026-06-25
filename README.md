@@ -155,7 +155,7 @@ You can pass several `--config` paths; they are merged in order, and **later fil
 
 ```bash
 python finetune_moleculenet.py \
-  --config configs/tutorials/moleculenet_bbbp_classification_scaffold_prior_guided.json \
+  --config configs/tutorials/moleculenet_bbbp_classification_scaffold_PT.json \
   --config configs/fragments/finetuning_strategy/linear_probing.json
 ```
 
